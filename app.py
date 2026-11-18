@@ -1,3 +1,7 @@
+# Import necessary libraries
+from users import users
+
+
 #Store submitted tickets in a list
 tickets = []
 
