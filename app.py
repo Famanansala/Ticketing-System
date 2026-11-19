@@ -5,6 +5,27 @@ from users import users
 #Store submitted tickets in a list
 tickets = []
 
+# User login
+print("Welcome to the IT Help Desk System!")
+
+employee_id = input("Please enter your employee ID: ")
+name = input("Please enter your full name: ")
+
+logged_in_user = None
+
+for user in users: 
+    if str(user["id"]) == employee_id and user["name"].lower() == name.lower():
+        logged_in_user = user
+        break
+    
+if logged_in_user is None:
+    print("Invalid employee ID or name. Access denied.")
+    exit()
+else:
+    print(f"Welcome, {logged_in_user['name']}! You are logged in as a {logged_in_user['role']}.")
+    print(f"Role: {logged_in_user['role']}")
+
+
 #MENU
 while True:
     print("\nWelcome to the IT Help Desk System!")
